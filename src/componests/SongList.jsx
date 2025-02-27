@@ -1,14 +1,13 @@
 import React from 'react'
 import SongItem from './SongItem'
 
-const SongList = () => {
+const SongList = ({songsArray}) => {
+  console.log(songsArray)
   return (
     <div className='song-list'>  
-        <SongItem/>
-        <SongItem/>
-        <SongItem/>
-        <SongItem/>
-        <SongItem/>
+      {songsArray.map((currentSongObj, index) => (
+        <SongItem {...currentSongObj}key={index} index={index}/>
+      ))}
     </div>
   )
 }
